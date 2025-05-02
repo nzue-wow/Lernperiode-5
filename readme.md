@@ -6,12 +6,12 @@
 
 Wie können Sie Ihr Projekt aus der Lernperiode 4 um eine Persistenz-Lösung erweitern? Was gibt es zu speichern, was für Tabellen brauchen Sie und wie muss der bestehende Code mit diesen interagieren?
 
-> ...
+> Ich werde eine Datenbank machen, die die Webseiten mit den dazugehörigen Passwörtern speichert. Für das brauche ich zwei Tabellen. Eine Tabelle ist dann Webseite und die  zweite Tabelle ist dann Passwörter. Die Datenbank soll mit dem Code Interagieren also wenn ich ein neues Passwort hinzufüge dann muss auch eine neue Spalte in den neuen Tabellen erstellt werden mit dem neuen Passwort. Das gleiche soll beim Löschen von Passwörtern Passieren.
 
 ## 2.5
 
-- [ ] ...
-- [ ] ...
+- [ ] Grobplanung machen
+- [ ] Datenbank machen
 
 ✍️ Heute habe ich... (50-100 Wörter)
 
