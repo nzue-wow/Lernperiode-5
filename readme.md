@@ -22,13 +22,13 @@ Passwort VARCHAR(50)
 );` die erste Tabelle Passwörter erstellt
 
 Für die zweite Tabelle habe ich diesen Befehl geschrieben:
-`CREATE TABLE Webseiten (
+--CREATE TABLE Webseiten (
     WebseitenID INT IDENTITY(1,1) PRIMARY KEY,
     WebseitenName VARCHAR(100),
     PasswortID INT NOT NULL,
     CONSTRAINT FK_PasswortID FOREIGN KEY (PasswortID)
         REFERENCES Passwoerter(PasswortID)
-);`
+);--
 
 
 ☝️ Vergessen Sie nicht, Ihr bestehendes Projekt und die Neuerungen von heute hochzuladen. Beschreiben Sie eindeutig, was heute an Code dazugekommen ist.
