@@ -10,10 +10,16 @@ Wie können Sie Ihr Projekt aus der Lernperiode 4 um eine Persistenz-Lösung erw
 
 ## 2.5
 
-- [ ] Grobplanung machen
-- [ ] Datenbank machen
+- [x] Grobplanung machen
+- [x] Datenbank machen
 
 ✍️ Heute habe ich... (50-100 Wörter)
+Ich habe heute mit der Grobplanung gestartet. Dort habe ich mir die Antworten zu den schon da stehenden Fragen überlegt. Ich habe mir überlegt was genau ich eigendlich speicher möchte. Dann habe ich SQL gestartet und erstmal mit 'CREATE DATABASE Lernperiode5' eine Datenbank erstellt. Dann habe ich mit
+'USE Lernperiode5;
+CREATE TABLE Passwörter(
+PasswortID INT IDENTITY(1,1) PRIMARY KEY,
+Passwort VARCHAR(50)
+);'
 
 ☝️ Vergessen Sie nicht, Ihr bestehendes Projekt und die Neuerungen von heute hochzuladen. Beschreiben Sie eindeutig, was heute an Code dazugekommen ist.
 
