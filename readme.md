@@ -29,15 +29,16 @@ Für die zweite Tabelle habe ich diesen Befehl geschrieben:
     CONSTRAINT FK_PasswortID FOREIGN KEY (PasswortID)
         REFERENCES Passwoerter(PasswortID)
 );</pre>
-
+Ich habe  die webseiten Tabelle mit der Passwörter Tabelle verbunden also mit Foreign key. So soll klar sein dasnn welches Passwort zu welcher Webseite gehört.
+Später habe ich dann gegooglet wie man die datenbank in den Code zu Programmieren, also das die sachen in der Datenbank gespeichert wird.
 
 ☝️ Vergessen Sie nicht, Ihr bestehendes Projekt und die Neuerungen von heute hochzuladen. Beschreiben Sie eindeutig, was heute an Code dazugekommen ist.
 
 ## 9.5 Kernfunktionalität
 
-- [ ] ... (dieses AP sollte zur Hälfte offline, also ohne Laptop zu bearbeiten sein — beispielsweise ein Datenmodell?)
-- [ ] ...
-- [ ] ...
+- [ ] Die Datenbank mit dem Visualstudio Code verbinden
+- [ ] Den Speicherort von den passwörtern von json zu der Datenbank ändern.
+- [ ] Testen ob die Tabellen aktualisiert werden wenn ich im Passwortmanager etwas hinzufüge oder lösche.
 
 ✍️ Heute habe ich... (50-100 Wörter)
 
