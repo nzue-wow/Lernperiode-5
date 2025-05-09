@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;  
 using System.Windows.Forms;
+using Microsoft.Data.Sqlite;
 using Newtonsoft.Json;  
 
 namespace PasswortManager
@@ -19,7 +21,8 @@ namespace PasswortManager
 
         public Form1()
         { InitializeComponent();
-            
+
+           
             this.StartPosition = FormStartPosition.CenterScreen; // Fenster zentriert starten
             LoadPasswords();
             this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
@@ -83,3 +86,5 @@ namespace PasswortManager
         }
     }
 }
+
+
