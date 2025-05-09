@@ -36,20 +36,42 @@ Später habe ich dann gegooglet wie man die datenbank in den Code zu Programmier
 
 ## 9.5 Kernfunktionalität
 
-- [ ] Die Datenbank mit dem Visualstudio Code verbinden
+- [x] Die Datenbank mit dem Visualstudio Code verbinden
 - [ ] Den Speicherort von den passwörtern von json zu der Datenbank ändern.
 - [ ] Testen ob die Tabellen aktualisiert werden wenn ich im Passwortmanager etwas hinzufüge oder lösche.
 
 ✍️ Heute habe ich... (50-100 Wörter)
+Ich habe  SQLlite installiert, damit ich eine einfachre Variante vom SQL habe für mein Programm. Dann habe ich erstmal im SQLlite eine Datenbank erstellt und dann eine Tabelle hinzugefügt. Ich habe nun nicht mehr zwei Tabellen wie am Anfang weil ich finde mit einer Tabelle geht es einfacher erstmal. Dann habe ich eine Verbindung mit dem Code und der Datenbank gemacht:
+<pre>
+ string connectionString = "Data Source= \"C:\\Users\\nenaz\\source\\repos\\PasswortManager\\SQL_PasswortmanagerDB.db\"";
+ connection = new SqliteConnection(connectionString);
+ connection.Open();
+</pre> 
+Damit die Passwörter in die Datenbak kommen, und in die richtige Spalte habe ich recherchiert und später bei einem Klassenkameraden gefragt der mir etwas passendes gezeigt hat:
+<pre>
+     using (SqliteConnection connection = new SqliteConnection(connectionString))
+ {
+  
 
+     SqliteCommand insertCommand = new SqliteCommand("INSERT INTO SavedPasswords (WebseitenName, Passwort) VALUES (@WebseitenName, @Passwort)", connection);
+
+     insertCommand.Parameters.AddWithValue("@WebseitenName", $"{website}");
+
+     insertCommand.Parameters.AddWithValue("@Passwort", $"{passwort}");
+
+ }
+</pre> 
+Leider funktioniert es nicht ganz, das Programm läuft durch bis `connection = new SqliteConnection(connectionString);` kommt da hät es dann immer an und ich habe noch nicht rausgefunden wieso. 
+Es hat mir heute nicht gereicht alle lernpakete zu machen, weil die ganze Zeit an dem Problem gearbeitet habe. Das heisst ich habe den anderen Speicherort nicht entfernt und ich bin mir gar nicht sicher ob ich den überhaupt muss entfernen.
 ☝️ Vergessen Sie nicht, bis einen ersten Code auf github hochzuladen
 
 ## 16.5 Kernfunktionalität und Ausbau
 
-- [ ] ...
-- [ ] ...
-- [ ] ...
-- [ ] ...
+- [ ] Herausfinden warum `connection = new SqliteConnection(connectionString);` nicht geht.
+- [ ] Checken ob `SqliteCommand insertCommand = new SqliteCommand("INSERT INTO SavedPasswords (WebseitenName, Passwort) VALUES (@WebseitenName, @Passwort)", connection);` überhaupt der richtige befehl ist um die Daten in die Datenbank zu packen.
+- [ ] Die Daten(Passwörter, Webseiten) mit der DB verbinden, wird sie aktualisiert wenn ich ein neues Passwort hinzufüge.
+- [ ] Wenn nötig den Speicherort Json löschen
+
 
 ✍️ Heute habe ich... (50-100 Wörter)
 
