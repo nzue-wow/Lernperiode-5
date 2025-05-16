@@ -67,20 +67,19 @@ Es hat mir heute nicht gereicht alle lernpakete zu machen, weil die ganze Zeit a
 
 ## 16.5 Kernfunktionalität und Ausbau
 
-- [ ] Herausfinden warum `connection = new SqliteConnection(connectionString);` nicht geht.
-- [ ] Checken ob `SqliteCommand insertCommand = new SqliteCommand("INSERT INTO SavedPasswords (WebseitenName, Passwort) VALUES (@WebseitenName, @Passwort)", connection);` überhaupt der richtige befehl ist um die Daten in die Datenbank zu packen.
-- [ ] Die Daten(Passwörter, Webseiten) mit der DB verbinden, wird sie aktualisiert wenn ich ein neues Passwort hinzufüge.
-- [ ] Wenn nötig den Speicherort Json löschen
+- [x] Herausfinden warum `connection = new SqliteConnection(connectionString);` nicht geht.
+- [x] Checken ob `SqliteCommand insertCommand = new SqliteCommand("INSERT INTO SavedPasswords (WebseitenName, Passwort) VALUES (@WebseitenName, @Passwort)", connection);` überhaupt der richtige befehl ist um die Daten in die Datenbank zu packen.
+- [x] Die Daten(Passwörter, Webseiten) mit der DB verbinden, wird sie aktualisiert wenn ich ein neues Passwort hinzufüge.
+- [x] Wenn nötig den Speicherort Json löschen
 
 
 ✍️ Heute habe ich... (50-100 Wörter)
-
+Ich habe lange am fehler geschaut warum `connection = new SqliteConnection(connectionString);` nicht funktioniert. Es hat sich herausgestellt das ich irgendwie eine neuere version von visual studio erstmal installieren musste und dann nochmals die sqllite programme updaten musste. Dieser Code `SqliteCommand insertCommand = new SqliteCommand("INSERT INTO SavedPasswords (WebseitenName, Passwort) VALUES (@WebseitenName, @Passwort)", connection);` funktioniert. SObald ich allles ungedatet habe ging dann alles, aber zuerst hat es mir die Teile wo Json steht las falsch angezeigt also habe ich die gelöscht und nun wird allles auf SQL lite geschpeichert in meiner tabelle.
 ☝️ Vergessen Sie nicht, bis einen ersten Code auf github hochzuladen
 
 ## 23.5 Abschluss
 
-- [ ] ...
-- [ ] ... (falls Ihnen nichts einfällt: Können Sie mit einem PowerShell-Skript von Ihrer Datenbank regelmäßig ein *backup* erstellen?)
+- [ ] Funktion Programmieren um Passwörter zu suchen. Also eine Sucheingabe
 - [ ] Reflexion über Ihre Arbeitsweise
 - [ ] Beschreibung des fertigen Projekts mit .gif etc.
 
