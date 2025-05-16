@@ -5,7 +5,7 @@ using System.Drawing;
 using System.IO;  
 using System.Windows.Forms;
 using Microsoft.Data.Sqlite;
-using Newtonsoft.Json;  
+
 
 namespace PasswortManager
 {
@@ -51,10 +51,10 @@ namespace PasswortManager
                 string filePath = Path.Combine(Application.StartupPath, "passwords.json");  // Speicherort
 
                 
-                string json = JsonConvert.SerializeObject(passwortListe, Formatting.Indented);
+                
 
                 
-                File.WriteAllText(filePath, json);
+                
                 MessageBox.Show("Passwörter wurden gespeichert!");
             }
             catch (Exception ex)
@@ -76,7 +76,7 @@ namespace PasswortManager
                     string json = File.ReadAllText(filePath);
 
                     
-                    passwortListe = JsonConvert.DeserializeObject<List<(string Website, string Passwort)>>(json);
+                   
                 }
             }
             catch (Exception ex)

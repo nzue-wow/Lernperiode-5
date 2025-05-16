@@ -1,4 +1,4 @@
-﻿using Microsoft.Data.Sqlite;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,17 +10,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Microsoft.Data.Sqlite; // für SqliteConnection
+using SQLitePCL;             // für Batteries_V2.Init()
+
+
 namespace PasswortManager
 {
     public partial class EingabePasswort : Form
     {
-        public SqliteConnection connection;
-        string connectionString = "Data Source= \"C:\\Users\\nenaz\\source\\repos\\PasswortManager\\SQL_PasswortmanagerDB.db\"";
+
 
         public EingabePasswort()
         {
+            Batteries_V2.Init(); // <- initialisiert die SQLite-Engine
+
             InitializeComponent();
-            
             this.StartPosition = FormStartPosition.CenterScreen;
             textBox1Website.TextAlign = HorizontalAlignment.Center;
             textBox2Passwort.TextAlign = HorizontalAlignment.Center;
@@ -28,41 +32,36 @@ namespace PasswortManager
 
         private void buttonSpeichern_Click(object sender, EventArgs e)
         {
-            
             string website = textBox1Website.Text;
             string passwort = textBox2Passwort.Text;
 
             if (!string.IsNullOrWhiteSpace(website) && !string.IsNullOrWhiteSpace(passwort))
             {
-
-                string connectionString = "Data Source= \"C:\\Users\\nenaz\\source\\repos\\PasswortManager\\SQL_PasswortmanagerDB.db\"";
-                connection = new SqliteConnection(connectionString);
-                connection.Open();
-
+                string connectionString = "Data Source=\"C:\\Users\\nenaz\\source\\repos\\PasswortManager\\SQL_PasswortmanagerDB.db\"";
 
                 using (SqliteConnection connection = new SqliteConnection(connectionString))
                 {
-                 
+                    connection.Open();
 
                     SqliteCommand insertCommand = new SqliteCommand("INSERT INTO SavedPasswords (WebseitenName, Passwort) VALUES (@WebseitenName, @Passwort)", connection);
 
-                    insertCommand.Parameters.AddWithValue("@WebseitenName", $"{website}");
+                    insertCommand.Parameters.AddWithValue("@WebseitenName", website);
+                    insertCommand.Parameters.AddWithValue("@Passwort", passwort);
 
-                    insertCommand.Parameters.AddWithValue("@Passwort", $"{passwort}");
-
+                    insertCommand.ExecuteNonQuery();  // <-- Wichtig: Führe den Befehl aus
                 }
 
-                Form1.passwortListe.Add((website, passwort));  // Speichern in Liste
+                Form1.passwortListe.Add((website, passwort));
                 MessageBox.Show("Passwort gespeichert!");
-                this.Close();  
+                this.Close();
             }
             else
             {
-                MessageBox.Show("Bitte alle Felder ausfüllen!");  // Fehler wenn Felder leer sind
+                MessageBox.Show("Bitte alle Felder ausfüllen!");
             }
         }
-
     }
+
 }
 
 
