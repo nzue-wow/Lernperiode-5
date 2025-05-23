@@ -111,7 +111,8 @@ Passwort löschen:
 ![Screenshot 2025-04-04 094619](https://github.com/user-attachments/assets/088e31e6-e4a2-4db1-9c6e-44a90268f8e1)
 
 Passwort suchen:
-![Bildschirmaufnahme 2025-05-23 104947](https://github.com/user-attachments/assets/bdc95e1d-336d-4788-830c-91ca5bcf1c94)
+![Bildschirmaufnahme 2025-05-23 104947 (1)](https://github.com/user-attachments/assets/d0478fe0-47a7-40a1-9e95-f6426f10f903)
+
 
 
 ## Reflexion
