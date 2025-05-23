@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.Sqlite;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace PasswortManager
 {
@@ -25,17 +27,27 @@ namespace PasswortManager
 
         private void LoadPasswords()
         {
-            if (listBoxPasswords == null)
-            {
-                MessageBox.Show("Fehler: listBoxPasswords existiert nicht!");
-                return;
-            }
+            listBoxPasswords.Items.Clear();
 
-            
+            string connectionString = "Data Source=\"C:\\Users\\nenaz\\source\\repos\\PasswortManager\\SQL_PasswortmanagerDB.db\"";
 
-            foreach (var entry in Form1.passwortListe)
+            using (var connection = new SqliteConnection(connectionString))
             {
-                listBoxPasswords.Items.Add($"{entry.Website}: {entry.Passwort}");
+                connection.Open();
+
+                var command = connection.CreateCommand();
+                command.CommandText = "SELECT WebseitenName, Passwort FROM SavedPasswords";
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string website = reader.GetString(0);
+                        string passwort = reader.GetString(1);
+
+                        listBoxPasswords.Items.Add($"{website}: {passwort}");
+                    }
+                }
             }
         }
 
@@ -51,6 +63,42 @@ namespace PasswortManager
             else
             {
                 MessageBox.Show("Bitte wählen Sie ein Passwort zum Löschen aus.");
+            }
+        }
+
+        private void ButtonSuche_Click(object sender, EventArgs e)
+        {
+            string suchbegriff = textBoxSuche.Text.Trim().ToLower();
+
+            listBoxPasswords.Items.Clear();
+
+            string connectionString = "Data Source=\"C:\\Users\\nenaz\\source\\repos\\PasswortManager\\SQL_PasswortmanagerDB.db\"";
+
+            using (var connection = new Microsoft.Data.Sqlite.SqliteConnection(connectionString))
+            {
+                connection.Open();
+
+                var command = connection.CreateCommand();
+                command.CommandText = "SELECT WebseitenName, Passwort FROM SavedPasswords WHERE LOWER(WebseitenName) LIKE @suchbegriff";
+                command.Parameters.AddWithValue("@suchbegriff", "%" + suchbegriff + "%");
+
+                using (var reader = command.ExecuteReader())
+                {
+                    bool gefunden = false;
+                    while (reader.Read())
+                    {
+                        string website = reader.GetString(0);
+                        string passwort = reader.GetString(1);
+
+                        listBoxPasswords.Items.Add($"{website}: {passwort}");
+                        gefunden = true;
+                    }
+
+                    if (!gefunden)
+                    {
+                        listBoxPasswords.Items.Add("Keine Einträge gefunden.");
+                    }
+                }
             }
         }
 
