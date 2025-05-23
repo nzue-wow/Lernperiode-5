@@ -79,18 +79,42 @@ Ich habe lange am fehler geschaut warum `connection = new SqliteConnection(conne
 
 ## 23.5 Abschluss
 
-- [ ] Funktion Programmieren um Passwörter zu suchen. Also eine Sucheingabe
+- [x] Funktion Programmieren um Passwörter zu suchen. Also eine Sucheingabe
 - [ ] Reflexion über Ihre Arbeitsweise
 - [ ] Beschreibung des fertigen Projekts mit .gif etc.
 
 ✍️ Heute habe ich... (50-100 Wörter)
-
+Ich habe heute die Suchfunktion programmiert. Ich habe ein neues Textfeld und einen Button eingefügt. Wenn man etwas in das Suchfeld eingibt und auf den Button klickt, zeigt das Programm alle gespeicherten Passwörter an die zu diesem Begriff passen. Es hat ein bisschen gedauert, bis alles richtig funktioniert hat. Ich habe auch getestet, ob die Suche mit Groß- und Kleinschreibung funktioniert
 ☝️ Vergessen Sie nicht, bis einen ersten Code auf github hochzuladen
 
 ## Fertiges Projekt
 
 ✍️ Beschreiben Sie hier, wie Ihr Projekt am Ende aussieht, und fügen Sie mindestens ein .gif ein.
+Mein Projekt ist ein einfacher Passwortmanager. Man kann neue Passwörter zu Webseiten speichern und sie später in einer Liste anzeigen lassen. Es gibt auch eine Suchfunktion, mit der man gezielt nach einer bestimmten Webseite suchen kann. Wenn man will, kann man ein Passwort auch wieder löschen. Alle Daten werden in einer SQLite-Datenbank gespeichert, damit sie beim nächsten Öffnen des Programms noch da sind.
+Login für das Programm:
+![Screenshot 2025-04-04 094326](https://github.com/user-attachments/assets/5a4ec91f-13c4-4616-86a0-c036b4eb93e2)
+![Screenshot 2025-04-04 094345](https://github.com/user-attachments/assets/9ef8d52c-a77d-4dd8-940a-6b5fcea40957)
+
+Mit new Passwords kann man neue Passwörter speichern und mit Saved Passwords kann man die gespeicherten Passwörter anschauen.
+![Screenshot 2025-04-04 094354](https://github.com/user-attachments/assets/9a2a5881-5b48-4431-b535-8bf162081bb7)
+
+New Passwords:
+![Screenshot 2025-04-04 094415](https://github.com/user-attachments/assets/a1ff1393-6df0-4a22-8cd5-56974bef3a6b)
+Neues Password eingeben und speichern:
+![Screenshot 2025-04-04 094512](https://github.com/user-attachments/assets/542a4ef0-739e-42e0-9975-e30e3932dc6f)
+
+Saved Passwords:
+![Screenshot 2025-04-04 094526](https://github.com/user-attachments/assets/294d9b61-7b70-49c5-a9ce-54f7da2e0b9c)
+
+Passwort löschen:
+![Screenshot 2025-04-04 094605](https://github.com/user-attachments/assets/8ab5cf57-c9d0-4b1c-a7d4-f8fb7e1609c9)
+![Screenshot 2025-04-04 094619](https://github.com/user-attachments/assets/088e31e6-e4a2-4db1-9c6e-44a90268f8e1)
+
+Passwort suchen:
+![Bildschirmaufnahme 2025-05-23 104947](https://github.com/user-attachments/assets/bdc95e1d-336d-4788-830c-91ca5bcf1c94)
+
 
 ## Reflexion
 
 ✍️ Was ging gut, was ging weniger gut? Was haben Sie gelernt, und was würden Sie bei der nächsten Lernperiode versuchen besser zu machen? Fassen Sie auch einen übergeordneten Vorsatz für Ihr nächstes Jahr im Lernatelier (100 bis 200 Wörter).
+In diesem Projekt habe ich viel über Datenbanken und das Arbeiten mit SQLite gelernt. Am Anfang war es nicht so einfach, weil ich viele Fehler beim Einrichten der Verbindung zur Datenbank hatte. Das Einfügen der Daten in die Tabelle hat nicht gleich geklappt, es gab da immer ein paar Fehler. Ich musste Visual Studio und die SQLite-Pakete richtig installieren und updaten. Das hat etwas Zeit gebraucht. Aber als das alles funktioniert hat, konnte ich mein Programm verbessern. Nächstes Jahr möchte ich mit meinen Projekten geduldig sein und nicht immer gleich ein crashout haben und vorallem möchte ich viele Projekte machen um besser zu werden. Auch ganz wichtig ist das ich die Code Teile die ich aus dem Internet habe das ich die am Schluss auch verstehe.
